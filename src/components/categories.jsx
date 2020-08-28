@@ -13,7 +13,7 @@ function Categories({items, onClickItem }) {
                 className={activeItem === index ? 'active' : ''}
                 onClick={() => setActiveItem(index)} 
                 key={`${name}_${index}`}>{name}</li>
-                
+                 
             ))}
           </ul>
       </div>
