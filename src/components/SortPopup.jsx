@@ -6,7 +6,7 @@ const SortPopup = React.memo(function SortPopup({items}) {
   const sortRef = React.useRef()
   const activeLable = items[activeItem].name
 
-  const toggleVisiplePopup = () => {
+  const toggleVisiblePopup = () => {
     setvisiblePopup(!visiblePopup)
   }
 
@@ -40,7 +40,7 @@ const SortPopup = React.memo(function SortPopup({items}) {
             />
           </svg>
           <b>Сортировка по:</b>
-          <span onClick={toggleVisiplePopup}>{activeLable}</span>
+          <span onClick={toggleVisiblePopup}>{activeLable}</span>
         </div>
         { visiblePopup && <div className="sort__popup">
           <ul>
