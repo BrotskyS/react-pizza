@@ -1,7 +1,28 @@
 import React from 'react'
+import {Button} from "./index";
+import {useDispatch} from "react-redux";
 
-const CartItem = ({name, type, size, totalPrice, totalCount}) => {
-    console.log(name)
+const CartItem = ({id, name, inThePackage, totalPrice, imageUrl, price, totalCount,onClickAddPizza,  onRemove, removeOneItem}) => {
+    const handleRemoveClick = (id) => {
+        onRemove(id)
+    }
+    const handleRemoveItem = () => {
+        removeOneItem()
+    }
+
+
+    const handleAddItem = () =>{
+        const obj = {
+            id,
+            name,
+            imageUrl,
+            price,
+            inThePackage,
+        };
+        onClickAddPizza(obj);
+    }
+
+
     return(
         <div className="cart__item">
             <div className="cart__item-img">
@@ -13,10 +34,10 @@ const CartItem = ({name, type, size, totalPrice, totalCount}) => {
             </div>
             <div className="cart__item-info">
                 <h3>{name}</h3>
-                <p>{type} тесто, {size} см.</p>
+                <p>Штук в упаковці: <b>{inThePackage}</b> </p>
             </div>
             <div className="cart__item-count">
-                <div className="button button--outline button--circle cart__item-count-minus">
+                <div onClick={handleRemoveItem} className="button button--outline button--circle cart__item-count-minus">
                     <svg
                         width="10"
                         height="10"
@@ -34,7 +55,7 @@ const CartItem = ({name, type, size, totalPrice, totalCount}) => {
                     </svg>
                 </div>
                 <b>{totalCount}</b>
-                <div className="button button--outline button--circle cart__item-count-plus">
+                <div onClick={handleAddItem} className="button button--outline button--circle cart__item-count-plus">
                     <svg
                         width="10"
                         height="10"
@@ -53,10 +74,10 @@ const CartItem = ({name, type, size, totalPrice, totalCount}) => {
                 </div>
             </div>
             <div className="cart__item-price">
-                <b>{totalPrice} ₽</b>
+                <b>{totalPrice} грн</b>
             </div>
             <div className="cart__item-remove">
-                <div className="button button--outline button--circle">
+                <Button onClick={handleRemoveClick} className="button--circle" outline>
                     <svg
                         width="10"
                         height="10"
@@ -72,7 +93,7 @@ const CartItem = ({name, type, size, totalPrice, totalCount}) => {
                             fill="#EB5A1E"
                         />
                     </svg>
-                </div>
+                    </Button>
             </div>
         </div>
     )

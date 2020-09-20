@@ -23,21 +23,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9422e0e3-1604-413c-82d9-50e7da61bd68" name="Default Changelist" comment="feature Redux">
-      <change afterPath="$PROJECT_DIR$/src/components/CartItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Pay.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PizzaBlock/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PizzaBlock/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SortPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SortPopup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/actions/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actions/pizzas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/pizzas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducers/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_categories.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_pizza-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_sort.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_sort.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +112,8 @@
       <workItem from="1600105667953" duration="1498000" />
       <workItem from="1600149477933" duration="1085000" />
       <workItem from="1600259033271" duration="441000" />
-      <workItem from="1600277125798" duration="9254000" />
+      <workItem from="1600277125798" duration="12635000" />
+      <workItem from="1600494135984" duration="15254000" />
     </task>
     <task id="LOCAL-00001" summary="feature Redux">
       <created>1599489231508</created>
@@ -168,10 +175,10 @@
     </state>
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1599067088001" />
     <state x="518" y="363" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.826@0.23.1440.826" timestamp="1599936801845" />
-    <state width="600" height="428" key="javadoc.popup" timestamp="1600339909568">
+    <state width="600" height="428" key="javadoc.popup" timestamp="1600540367249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="600" height="428" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1600339909568" />
+    <state width="600" height="428" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1600540367249" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1592819132317">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

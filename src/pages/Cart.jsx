@@ -2,7 +2,7 @@ import React, {useDebugValue} from 'react';
 import {CartItem} from "../components";
 import {Link} from 'react-router-dom'
 import {useDispatch, useSelector} from "react-redux";
-import {clearCart} from '../redux/actions/cart'
+import {clearCart, removeCartItem, removeOneItemInCart} from '../redux/actions/cart'
 import CartEmpty from '../assets/img/empty-cart.png'
 
 function Cart() {
@@ -12,10 +12,25 @@ function Cart() {
     return items[key].items[0]
   })
 
+  const handleAddPizzaInCart = (obj) => {
+    dispatch({
+      type: 'ADD_PIZZA_CART',
+      payload: obj,
+    });
+  };
+
   const onClearCart = () => {
-    if(window.confirm("Ви дісно хочите видалити всі піцци?")){
+    if(window.confirm("Ви дісно хочите видалити всі товари?")){
       dispatch(clearCart())
     }
+  }
+  const onRemoveItem = (id) => {
+    if(window.confirm('Ви дійсно хочите видалити?')){
+      dispatch(removeCartItem(id))
+    }
+  }
+  const onRemoveOneItem = () => {
+      dispatch(removeOneItemInCart())
   }
 
   return (
@@ -93,18 +108,24 @@ function Cart() {
                   />
                 </svg>
 
-                <span onClick={onClearCart}>Очистить корзину</span>
+                <span onClick={onClearCart}>Очистити корзину</span>
               </div>
             </div>
             <div className="content__items">
               {
                 addedPizzas.map((obj) => (
                     <CartItem
+                        onClickAddPizza={handleAddPizzaInCart}
+                        id={obj.id}
                         name={obj.name}
                         type={obj.type}
                         size={obj.size}
+                        price={obj.price}
                         totalPrice={items[obj.id].totalPrice}
                         totalCount={items[obj.id].items.length}
+                        inThePackage={obj.inThePackage}
+                        onRemove={onRemoveItem}
+                        removeOneItem={onRemoveOneItem}
                     />
                 ))
               }
@@ -112,7 +133,7 @@ function Cart() {
             <div className="cart__bottom">
               <div className="cart__bottom-details">
               <span>
-                Всего пицц: <b>{totalCount} шт.</b>{' '}
+                Всього пицц: <b>{totalCount} шт.</b>{' '}
               </span>
                 <span>
                 {' '}
@@ -120,7 +141,7 @@ function Cart() {
               </span>
               </div>
               <div className="cart__bottom-buttons">
-                <a href="/" className="button button--outline button--add go-back-btn">
+                <Link to={'/'} className="button button--outline button--add go-back-btn">
                   <svg
                       width="8"
                       height="14"
@@ -136,10 +157,10 @@ function Cart() {
                     />
                   </svg>
 
-                  <span>Вернуться назад</span>
-                </a>
+                    <span>Вернутися назад</span>
+                  </Link>
                 <div className="button pay-btn">
-                  <span>Оплатить сейчас</span>
+                  <span>Оплатити зараз</span>
                 </div>
               </div>
             </div> :
@@ -147,14 +168,14 @@ function Cart() {
 
           </div> :
               <div className="cart cart--empty">
-                <h2>Корзина пустая <icon>😕</icon></h2>
+                <h2>Корзина пуста <icon>😕</icon></h2>
                 <p>
-                  Вероятней всего, вы не заказывали ещё пиццу.<br/>
-                  Для того, чтобы заказать пиццу, перейди на главную страницу.
+                  Скоріш за все, ви не замовляли ще піцу.<br/>
+                  Для того, щоб замовити піцу, перейди на головну сторінку.
                 </p>
                 <img src={CartEmpty} alt="Empty cart"/>
                 <Link to="/" className="button button--black">
-                  <span>Вернуться назад</span>
+                  <span>Вернутися назад</span>
                 </Link>
               </div>
 

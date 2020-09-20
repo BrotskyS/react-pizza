@@ -15,8 +15,8 @@ function Header() {
           <div className="header__logo">
             <img width="38" src={logoSvg} alt="Pizza logo" />
             <div>
-              <h1>React Pizza</h1>
-              <p>самая вкусная пицца во вселенной</p>
+              <h1>Гурт Склобанки</h1>
+              <p>Найкращі ціни на склобанку</p>
             </div>
           </div>
         </Link>
@@ -24,7 +24,7 @@ function Header() {
         <div className="header__cart">
           <Link to="/cart">
             <Button className="button--cart">
-              <span>{totalPrice} ₽</span>
+              <span>{totalPrice} грн</span>
               <div className="button__delimiter"></div>
               <svg
                 width="18"

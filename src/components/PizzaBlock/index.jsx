@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Button from '../Button';
 
-function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, addedCount }) {
+function PizzaBlock({ id, name, inThePackage,  imageUrl, price, types, sizes, onClickAddPizza, addedCount, }) {
   const availableTypes = ['тонкое', 'традиционное'];
   const availableSizes = [26, 30, 40];
 
@@ -24,8 +24,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
       name,
       imageUrl,
       price,
-      size: availableSizes[activeSize],
-      type: availableTypes[activeType],
+      inThePackage,
     };
     onClickAddPizza(obj);
   };
@@ -35,35 +34,12 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
       <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
       <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
-        <ul>
-          {availableTypes.map((type, index) => (
-            <li
-              key={type}
-              onClick={() => onSelectType(index)}
-              className={classNames({
-                active: activeType === index,
-                disabled: !types.includes(index),
-              })}>
-              {type}
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {availableSizes.map((size, index) => (
-            <li
-              key={size}
-              onClick={() => onSelectSize(index)}
-              className={classNames({
-                active: activeSize === index,
-                disabled: !sizes.includes(size),
-              })}>
-              {size} см.
-            </li>
-          ))}
-        </ul>
+        <div className="in-package">
+          <p>Штук в упаковці: <b>{inThePackage}</b> </p>
+        </div>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {price} ₽</div>
+        <div className="pizza-block__price"> {price} грн </div>
         <Button onClick={onAddPizza} className="button--add" outline>
           <svg
             width="12"
@@ -76,7 +52,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
               fill="white"
             />
           </svg>
-          <span>Добавить</span>
+          <span>Добавити</span>
           {addedCount && <i>{addedCount}</i>}
         </Button>
       </div>
